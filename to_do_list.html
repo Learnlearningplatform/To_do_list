@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- for icons font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>TO DO LIST APP </title>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="container bg-danger text-center" id="header">
+            <br><br>
+             <span style="font-size: 40px;color: whitesmoke;font-family: 'Times New Roman', Times, serif"> TO DO LIST APP</span>
+             <br><br><br>
+
+                 <div class="input-group">
+                    <input type="text" class="form-control" placeholder="ENTER THE ITEM...." id="myinput">
+                    <div class="input-group-append">
+                      <button class=" btn btn-primary" onclick="newElement()">ADD</button>
+                   </div>
+                </div>
+
+                <br><br>
+        </div>
+  <br><br>
+        <div class="container">
+            <ul id="myul" class="list-group" >
+                <li class="list-group-item" style="font-family: cursive">My books</li>
+                <li class="list-group-item" style="font-family: cursive">Class timmings</li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script>
+//to add new element
+function newElement()
+{
+    var li=document.createElement("li");
+    var value=document.getElementById("myinput").value;
+    var t=document.createTextNode(value);
+    li.appendChild(t);
+
+    if (value == '')
+     {
+    alert("You must write something..!");
+     }
+   else 
+   {
+    document.getElementById("myul").appendChild(li).classList.add("list-group-item");
+    document.getElementById("myul").style.fontFamily="cursive";
+   }
+  document.getElementById("myinput").value = "";
+
+
+var button=document.createElement("button");
+var txt=document.createTextNode("\u00D7");
+button.className="close";
+button.appendChild(txt);
+li.appendChild(button);
+
+
+    button.onclick = function() 
+    {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+
+    var close = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < close.length; i+=2) {
+    close[i].classList.add("list-group-item-success");
+  
+  }
+
+}
+
+
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var button = document.createElement("button");
+  var txt = document.createTextNode("\u00D7");
+  button.className = "close";
+  button.appendChild(txt);
+  myNodelist[i].appendChild(button);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+var close = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < close.length; i+=2) {
+    close[i].classList.add("list-group-item-success");
+  
+  }
+
+
+</script>
