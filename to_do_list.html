@@ -21,34 +21,38 @@
     
 
     <title>TO DO LIST APP </title>
+    
 
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <div class="container bg-danger text-center" id="header">
-            <br><br>
+    <div class="container-fluid" id="main">
+        <br><br><br><br><br>
+        <div class="container bg-success text-center" id="header">
+          <br><br>
              <span style="font-size: 40px;color: whitesmoke;font-family: 'Times New Roman', Times, serif"> TO DO LIST APP</span>
-             <br><br><br>
+             <br><br>
 
                  <div class="input-group">
                     <input type="text" class="form-control" placeholder="ENTER THE ITEM...." id="myinput">
                     <div class="input-group-append">
-                      <button class=" btn btn-primary" onclick="newElement()">ADD</button>
+                      <button class=" btn btn-danger" onclick="newElement()">ADD</button>
                    </div>
                 </div>
 
-                <br><br>
+           <br><br><br>
         </div>
-  <br><br>
+       
         <div class="container">
             <ul id="myul" class="list-group" >
                 <li class="list-group-item" style="font-family: cursive">My books</li>
                 <li class="list-group-item" style="font-family: cursive">Class timmings</li>
+                <li class="list-group-item" style="font-family: cursive">Hobbies</li>
 
             </ul>
         </div>
+        <br><br><br><br><br>
     </div>
 </body>
 
@@ -127,3 +131,14 @@ for (i = 0; i < close.length; i+=2) {
 
 
 </script>
+
+
+<style>
+    #main
+    {
+      background-image:linear-gradient(  rgba(17, 16, 16, 0.74), rgba(15, 14, 14, 0.637)),url('bg.jpg');
+      background-position:absolute;
+      background-size: cover;
+    }
+  </style>
+
