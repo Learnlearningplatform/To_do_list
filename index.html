@@ -33,18 +33,23 @@
           <br><br>
              <span style="font-size: 40px;color: whitesmoke;font-family: 'Times New Roman', Times, serif"> TO DO LIST APP</span>
              <br><br>
-
+               
+       <div class="row">
+             <div class='col-md-4'></div>
+             <div class='col-md-4'>
                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="ENTER THE ITEM...." id="myinput">
+                    <input type="text" class="form-control" id="myinput">
                     <div class="input-group-append">
                       <button class=" btn btn-danger" onclick="newElement()">ADD</button>
                    </div>
                 </div>
+              </div>  
+              </div>
 
            <br><br><br>
         </div>
-       
-        <div class="container">
+       <br>
+        <div class="container border">
             <ul id="myul" class="list-group" >
                 <li class="list-group-item" style="font-family: cursive">My books</li>
                 <li class="list-group-item" style="font-family: cursive">Class timmings</li>
@@ -97,6 +102,10 @@ for (i = 0; i < close.length; i+=2) {
   
   }
 
+  
+var input=document.querySelector('input');
+input.value='ITEM NAME';
+
 }
 
 
@@ -124,11 +133,15 @@ for (i = 0; i < close.length; i++) {
 
 var close = document.getElementsByTagName("li");
 var i;
-for (i = 0; i < close.length; i+=2) {
+for (i = 0; i < close.length; i+=2) 
+{
     close[i].classList.add("list-group-item-success");
   
   }
 
+
+  var input=document.querySelector('input');
+  input.value='ITEM NAME';
 
 </script>
 
@@ -139,6 +152,7 @@ for (i = 0; i < close.length; i+=2) {
       background-image:linear-gradient(  rgba(17, 16, 16, 0.74), rgba(15, 14, 14, 0.637)),url('bg.jpg');
       background-position:absolute;
       background-size: cover;
+      height:800px;
     }
   </style>
 
