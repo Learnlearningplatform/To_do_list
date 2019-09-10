@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- for icons font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>TO DO LIST APP </title>
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="main">
+        <br><br><br><br><br>
+        <div class="container bg-black text-center" id="header">
+            <br><br>
+            <span style="font-size: 40px;color: whitesmoke;font-family: 'Times New Roman', Times, serif"> TO DO LIST
+                APP</span>
+            <br><br>
+
+            <div class="row">
+                <div class='col-md-4'></div>
+                <div class='col-md-4'>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="myinput" placeholder="ENTER YOUR ITEM NAME">
+                        <div class="input-group-append">
+                            <button class=" btn btn-danger">ADD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br>
+        </div>
+        <br>
+        <div class="container ">
+            <ul id="myul" class="list-group">
+                <li class="list-group-item list">My books <span class="close">X</span></li>
+                <li class="list-group-item list">Class timmings<span class="close">X</span></li>
+                <li class="list-group-item list">Hobbies<span class="close">X</span></li>
+
+            </ul>
+        </div>
+        <br><br><br><br><br>
+    </div>
+</body>
+
+<script>
+    //to add new element
+    $("button").click(function () {
+        var val = $("#myinput").val();
+        if (val == "") { alert("YOU MUST ENTER SOMETHING"); }
+        else {
+            $("#myul").append(`<li class="list-group-item list">${val}<span class="close">X</span></li> `);
+        }
+
+        $(".close").click(function () {
+            $(this).parent().hide();
+        });
+
+        var li = $("li");
+        for (i = 0; i <= li.length; i++) {
+            $("li:even").addClass("bg-black");
+            $("span:odd").addClass("close-white");
+
+        }
+       $("#myinput").val("");
+    });
+
+
+    $(".close").click(function () {
+        $(this).parent().hide();
+    });
+
+    var li = $("li");
+    for (i = 0; i <= li.length; i++) {
+        $("li:even").addClass("bg-black");
+        $("span:odd").addClass("close-white");
+       
+
+    }
+
+
+
+</script>
+
+
+<style>
+    #main {
+        background-image: linear-gradient(rgba(26, 25, 25, 0.74), rgba(14, 13, 13, 0.637));
+        background-position: absolute;
+        background-size: cover;
+        height: 800px;
+    }
+
+    .bg-black {
+        background-color: rgba(10, 10, 10, 0.582);
+        color: whitesmoke;
+    }
+
+    .list {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .close {
+        font-family: cursive !important;
+        color: black !important;
+    }
+
+    .close-white {
+        font-family: cursive !important;
+        color: whitesmoke !important;
+    }
+</style>
